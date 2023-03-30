@@ -1,0 +1,7 @@
+<launch>
+    <!-- Launch the obstacle detector node -->
+    <node pkg="simple_robot" type="obstacle_detector.py" name="obstacle_detector" output="screen" />
+    
+    <!-- Launch the motion controller node -->
+    <node pkg="simple_robot" type="motion_controller.py" name="motion_controller" output="screen" />
+</launch>
