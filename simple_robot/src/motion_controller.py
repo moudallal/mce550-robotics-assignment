@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+# motion_controller.py
+# Author: Mohamad Moudallal
+# GitHub: https://github.com/moudallal
+# Email: mohamad@moudallal.xyz
+
 import math
 import rospy
 from geometry_msgs.msg import Twist
@@ -8,9 +13,9 @@ from simple_robot.msg import Obstacle
 # Subscriber callback method
 def callback(data):
     # Move the robot forward
-    move.linear.x = 0.3
     move.angular.z = 0
-
+    move.linear.x = 0.3
+    
     # Evaluate the distance between the robot and the obstacle
     if data.distance < 1:
         rospy.loginfo('%s detected at %f meters away!' %(data.name, data.distance))

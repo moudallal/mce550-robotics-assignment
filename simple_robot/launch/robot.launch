@@ -1,3 +1,8 @@
+<!-- robot.launch -->
+<!-- Author: Mohamad Moudallal -->
+<!-- GitHub: https://github.com/moudallal -->
+<!-- Email: mohamad@moudallal.xyz -->
+
 <launch>
     <!-- Launch the obstacle detector node -->
     <node pkg="simple_robot" type="obstacle_detector.py" name="obstacle_detector" output="screen" />

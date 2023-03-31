@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+# obstacle_detector.py
+# Author: Mohamad Moudallal
+# GitHub: https://github.com/moudallal
+# Email: mohamad@moudallal.xyz
+
 import rospy
 from sensor_msgs.msg import LaserScan
 from simple_robot.msg import Obstacle
@@ -7,7 +12,11 @@ from simple_robot.msg import Obstacle
 # Subscriber callback method
 def callback(data):
     # Access the forward laser scan distance (0-2pi -> ranged[0]-ranges[359])
-    obstacle.distance = data.ranges[0]
+    range = []
+    range.extend(list(data.ranges[355:360]))
+    range.extend(list(data.ranges[0:5]))
+    # Send the minimum distance in a 10-degree range for ensuring safety
+    obstacle.distance = min(range)
     # Send a dummy name
     obstacle.name = 'Obstacle'
     publisher.publish(obstacle)
