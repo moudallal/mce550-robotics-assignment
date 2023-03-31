@@ -11,7 +11,7 @@ You can find a description of the MCE550 course [here](https://soe.lau.edu.lb/de
 In this assignment, we are required to create a ROS package that contains multiple nodes, a custom message, and a launch file. The package will be used to simulate a simple robot that moves in a straight line and detects obstacles.
 This assignment is an adaptation of the classical ROS publisher/subscriber tutorial.
 
-## Project Requirements
+## Assignment Requirements
 1. Create a new ROS package named "simple_robot" using `catkin_create_pkg`.
 2. Create a new custom message type named `Obstacle` in the package. The message should have two fields: a `float32` named `distance` and a `String` named `name`.
 3. Create a node named `motion_controller` in the package. This node should publish messages to the `/cmd_vel` topic to control the robot's motion. The node should subscribe to the `/obstacle_detection` topic to detect obstacles.
