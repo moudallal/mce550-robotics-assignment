@@ -1,0 +1,12 @@
+<!-- robot.launch -->
+<!-- Author: Mohamad Moudallal -->
+<!-- GitHub: https://github.com/moudallal -->
+<!-- Email: mohamad@moudallal.xyz -->
+
+<launch>
+    <!-- Launch the obstacle detector node -->
+    <node pkg="simple_robot_cpp" type="obstacle_detector" name="obstacle_detector" output="screen" />
+    
+    <!-- Launch the motion controller node -->
+    <node pkg="simple_robot_cpp" type="motion_controller" name="motion_controller" output="screen" />
+</launch>
