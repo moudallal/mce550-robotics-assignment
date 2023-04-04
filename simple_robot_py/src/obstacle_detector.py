@@ -7,7 +7,7 @@
 
 import rospy
 from sensor_msgs.msg import LaserScan
-from simple_robot.msg import Obstacle
+from simple_robot_py.msg import Obstacle
 
 # Subscriber callback method
 def callback(data):
