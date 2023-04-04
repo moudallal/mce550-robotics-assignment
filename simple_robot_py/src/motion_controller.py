@@ -18,7 +18,7 @@ def callback(data):
     
     # Evaluate the distance between the robot and the obstacle
     if data.distance < 1:
-        rospy.loginfo('%s detected at %f meters away!' %(data.name, data.distance))
+        rospy.loginfo('%s detected at %1.3f meters away!' %(data.name, data.distance))
         rospy.loginfo('SEARCHING FOR SAFE PATH')
         # Rotate the robot to the left to find a safe path
         move.linear.x = 0
@@ -27,16 +27,16 @@ def callback(data):
         rospy.loginfo('No obstacles detected.')
         rospy.loginfo('MOVING FORWARD')
     else:
-        rospy.loginfo('Obstacle is still far. Distance: %f meters' %(data.distance))
+        rospy.loginfo('Obstacle is still far. Distance: %1.3f meters' %(data.distance))
         rospy.loginfo('MOVING FORWARD')
 
     publisher.publish(move)
 
-# Initialize node
+# Initialize ROS node
 rospy.init_node('motion_controller', anonymous=True)
 # Define publisher on topic /cmd_vel
 publisher = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
-# Define subscriber on topic /obstacl_detection
+# Define subscriber on topic /obstacle_detection
 subscriber = rospy.Subscriber('/obstacle_detection', Obstacle, callback)
 
 # Set rate to 10Hz

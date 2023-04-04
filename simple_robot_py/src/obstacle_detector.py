@@ -11,17 +11,18 @@ from simple_robot.msg import Obstacle
 
 # Subscriber callback method
 def callback(data):
-    # Access the forward laser scan distance (0-2pi -> ranged[0]-ranges[359])
+    # Access the forward laser scan distance (0-2pi -> ranges[0]-ranges[359])
     range = []
     range.extend(list(data.ranges[355:360]))
     range.extend(list(data.ranges[0:5]))
+
     # Send the minimum distance in a 10-degree range for ensuring safety
     obstacle.distance = min(range)
     # Send a dummy name
     obstacle.name = 'Obstacle'
     publisher.publish(obstacle)
 
-# Initialize node
+# Initialize ROS node
 rospy.init_node('obstacle_detector', anonymous=True)
 # Define publisher on topic /obstacle_detection
 publisher = rospy.Publisher('/obstacle_detection', Obstacle, queue_size=10)
