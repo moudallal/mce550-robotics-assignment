@@ -9,7 +9,7 @@ You can find a description of the MCE550 course [here](https://soe.lau.edu.lb/de
 
 ## Assignment Description
 In this assignment, we are required to create a ROS package that contains multiple nodes, a custom message, and a launch file. The package will be used to simulate a simple robot that moves in a straight line and detects obstacles.
-This assignment is an adaptation of the classical ROS publisher/subscriber tutorial.
+This assignment is an adaptation of the classical ROS publisher/subscriber tutorial. The assignment was completed using both Python and C++.
 
 ## Assignment Requirements
 1. Create a new ROS package named "simple_robot" using `catkin_create_pkg`.
@@ -59,7 +59,7 @@ $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 $ cd ~/catkin_ws && catkin build
 ```
 
-#### 5. Clone the assignment inside `~/catkin_ws/src`
+#### 5. Clone the repository inside `~/catkin_ws/src`
 
 ```sh
 $ cd ~/catkin_ws/src
@@ -77,7 +77,7 @@ $ source devel/setup.bash
 #### 7. Grant execution rights for `.py` files
 
 ```sh
-$ cd ~/catkin_ws/src/mce550-robotics-assignment1/simple_robot/src
+$ cd ~/catkin_ws/src/mce550-robotics-assignment1/simple_robot_py/src
 $ sudo chmod +x *.py
 ```
 
@@ -91,14 +91,17 @@ $ cd ~/catkin_ws
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 ```
 
-#### 2. Launch the `simple_robot` package in a seperate terminal
+#### 2. Launch the `simple_robot_***` package in a seperate terminal in Python <b>or</b> C++
 
 ```sh
 $ cd ~/catkin_ws
-$ roslaunch simple_robot robot.launch
+# Python
+$ roslaunch simple_robot_py robot.launch
+# or C++
+$ roslaunch simple_robot_cpp robot.launch
 ```
 
-The `simple_robot` package uses the `/scan` topic from TurtleBot3 to scan for obstacles in a 10-degree range from the front side of the robot.
+The `simple_robot_py` and `simple_robot_cpp` packages use the `/scan` topic from TurtleBot3 to scan for obstacles in a 10-degree range from the front side of the robot and then publish on the `/cmd_vel` topic in order to actuate the TurtleBot3.
 
 <p align="center">
   <img src="docs/logging.png" width="50%" />
@@ -106,6 +109,6 @@ The `simple_robot` package uses the `/scan` topic from TurtleBot3 to scan for ob
 <p align = "center"><b>Simple Robot logging</b></p>
 
 ## Credits
-Author: Mohamad Moudallal <br />
-GitHub: https://github.com/moudallal <br />
-Email: mohamad@moudallal.xyz
+- Author: Mohamad Moudallal
+  - GitHub: https://github.com/moudallal
+  - Email: mohamad@moudallal.xyz
