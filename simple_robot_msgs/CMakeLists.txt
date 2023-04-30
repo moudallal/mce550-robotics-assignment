@@ -10,7 +10,7 @@ add_message_files(
 
 add_service_files(
   FILES
-  ChangeVelocity.srv
+  DriveVelocity.srv
   ToggleMode.srv
 )
 
