@@ -8,7 +8,7 @@
 #include <algorithm>
 
 #include <sensor_msgs/LaserScan.h>
-#include "simple_robot_cpp/Obstacle.h"
+#include "simple_robot_msgs/Obstacle.h"
 
 // Initialize the publisher and subscriber
 ros::Publisher publisher;
@@ -21,7 +21,7 @@ void callback(const sensor_msgs::LaserScan data) {
     range.insert(range.begin(), data.ranges.begin() + 354, data.ranges.end());
     range.insert(range.end(), data.ranges.begin(), data.ranges.begin() + 5);
     
-    simple_robot_cpp::Obstacle obstacle;
+    simple_robot_msgs::Obstacle obstacle;
     // Send the minimum distance in a 10-degree range for ensuring safety
     obstacle.distance = *std::min_element(range.begin(), range.end());
     // Send a dummy name
@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
     ros::NodeHandle n;
 
     // Define publisher on topic /obstacle_detection
-    publisher = n.advertise<simple_robot_cpp::Obstacle>("/obstacle_detection", 10);
+    publisher = n.advertise<simple_robot_msgs::Obstacle>("/obstacle_detection", 10);
     // Define subscriber on topic /scan
     subscriber = n.subscribe<sensor_msgs::LaserScan>("/scan", 10, callback);
 

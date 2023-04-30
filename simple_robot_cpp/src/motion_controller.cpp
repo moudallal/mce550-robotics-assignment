@@ -6,14 +6,14 @@
 #include "ros/ros.h"
 
 #include "geometry_msgs/Twist.h"
-#include "simple_robot_cpp/Obstacle.h"
+#include "simple_robot_msgs/Obstacle.h"
 
 // Initialize publisher and subscriber
 ros::Publisher publisher;
 ros::Subscriber subscriber;
 
 // Subscriber callback method
-void callback(const simple_robot_cpp::Obstacle data) {
+void callback(const simple_robot_msgs::Obstacle data) {
     // Move the robot forward
     geometry_msgs::Twist move;
     move.angular.z = 0;
@@ -47,7 +47,7 @@ int main(int argc, char **argv) {
     // Define publisher on topic /cmd_vel
     publisher = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
     // Define subscriber on topic /obstacle_detection
-    subscriber = n.subscribe<simple_robot_cpp::Obstacle>("/obstacle_detection", 10, callback);
+    subscriber = n.subscribe<simple_robot_msgs::Obstacle>("/obstacle_detection", 10, callback);
 
     // Keep the node in spin
     ros::spin();

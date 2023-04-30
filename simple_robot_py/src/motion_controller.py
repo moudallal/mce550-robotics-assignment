@@ -8,7 +8,7 @@
 import math
 import rospy
 from geometry_msgs.msg import Twist
-from simple_robot_py.msg import Obstacle
+from simple_robot_msgs.msg import Obstacle
 
 # Subscriber callback method
 def callback(data):

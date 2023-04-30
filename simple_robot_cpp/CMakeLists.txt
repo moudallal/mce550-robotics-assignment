@@ -10,21 +10,21 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   sensor_msgs
   message_generation
+  simple_robot_msgs
 )
 
 ## Generate messages in the 'msg' folder
-add_message_files(
-  FILES
-  Obstacle.msg
-)
+# add_message_files(
+#   FILES
+# )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-  geometry_msgs
-  sensor_msgs
-)
+# generate_messages(
+#   DEPENDENCIES
+#   std_msgs
+#   geometry_msgs
+#   sensor_msgs
+# )
 
 catkin_package(
 #  INCLUDE_DIRS include
