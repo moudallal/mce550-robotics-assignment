@@ -18,8 +18,8 @@ ros::Subscriber subscriber;
 void callback(const sensor_msgs::LaserScan data) {
     // Access the forward laser scan distance (0-2pi -> ranges[0]-ranges[359])
     std::vector<float> range;
-    range.insert(range.begin(), data.ranges.begin() + 354, data.ranges.end());
-    range.insert(range.end(), data.ranges.begin(), data.ranges.begin() + 5);
+    range.insert(range.begin(), data.ranges.begin() + 349, data.ranges.end());
+    range.insert(range.end(), data.ranges.begin(), data.ranges.begin() + 10);
     
     simple_robot_msgs::Obstacle obstacle;
     // Send the minimum distance in a 10-degree range for ensuring safety
