@@ -9,4 +9,7 @@
     
     <!-- Launch the motion controller node -->
     <node pkg="simple_robot_cpp" type="motion_controller" name="motion_controller" output="screen" />
+
+    <!-- Launch the motion controller node -->
+    <node pkg="simple_robot_cpp" type="process_image" name="process_image" output="screen" />
 </launch>

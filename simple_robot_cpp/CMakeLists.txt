@@ -50,3 +50,7 @@ add_dependencies(motion_controller ${catkin_EXPORTED_TARGETS})
 add_executable(obstacle_detector src/obstacle_detector.cpp)
 target_link_libraries(obstacle_detector ${catkin_LIBRARIES})
 add_dependencies(obstacle_detector ${catkin_EXPORTED_TARGETS})
+
+add_executable(process_image src/process_image.cpp)
+target_link_libraries(process_image ${catkin_LIBRARIES})
+add_dependencies(process_image ${catkin_EXPORTED_TARGETS})
