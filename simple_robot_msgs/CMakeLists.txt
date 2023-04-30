@@ -8,12 +8,11 @@ add_message_files(
   Obstacle.msg
 )
 
-## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+  FILES
+  ChangeVelocity.srv
+  ToggleMode.srv
+)
 
 generate_messages(DEPENDENCIES std_msgs)
 
