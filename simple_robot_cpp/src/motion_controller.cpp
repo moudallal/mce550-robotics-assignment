@@ -42,7 +42,7 @@ void obstacleCallback(const simple_robot_msgs::Obstacle data) {
 }
 
 bool handleChangeVelRequest(simple_robot_msgs::ChangeVelocity::Request& req, simple_robot_msgs::ChangeVelocity::Response& res) {
-    ROS_INFO("ChangeVelocity request received - linear_x: %1.2f, angular_z: %1.2f", (float)req.linear_x, (float)req.angular_z);
+    ROS_INFO("Change Velocity request received - linear_x: %1.2f, angular_z: %1.2f", (float)req.linear_x, (float)req.angular_z);
 
     linear_x = req.linear_x;
     angular_z = req.angular_z;
