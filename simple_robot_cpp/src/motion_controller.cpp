@@ -19,7 +19,7 @@ float default_linear_x = 0.3;
 float default_angular_z = 0.5;
 
 // Chase flag
-bool chase = true;
+bool chase = false;
 
 // Robot actuation function
 void drive_robot(float linear_x, float angular_z) {
